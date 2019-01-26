@@ -63,7 +63,6 @@ console.log(tyrannosaurus.period);
 // tyrannosaurus.roar = () => `RAWERSRARARWERSARARARRRR!`;
 
 console.log(tyrannosaurus.roar());
-debugger
 
 // ==== Arrays ====
 
