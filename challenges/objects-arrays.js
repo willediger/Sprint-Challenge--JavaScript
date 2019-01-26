@@ -66,7 +66,7 @@ const graduates = [{"id":1,"first_name":"Cynde","university":"Missouri Southern 
 Once you have the new array created, sort the universities alphabetically and log the result. */
 let universities = [];
 for (let i = 0; i < graduates.length; i++) {
-  currUniversity = graduates[i].university;
+  let currUniversity = graduates[i].university;
   //checks if university already present. if not, adds it to universities
   if (!universities.includes(currUniversity)) { 
     universities.push(currUniversity);
