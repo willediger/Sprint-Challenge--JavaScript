@@ -88,5 +88,5 @@ const notACube = new CubeMaker({length: 4, width: 2, height: 2});
 console.log(cube.volume()); // 8
 console.log(cube.surfaceArea()); // 24
 
-console.log(notACube.volume());
-console.log(notACube.surfaceArea());
+console.log(notACube.volume()); // 'This cuboid is not a cube.'
+console.log(notACube.surfaceArea()); // 'This cuboid is not a cube.'
