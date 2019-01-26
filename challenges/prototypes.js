@@ -56,3 +56,37 @@ console.log(cuboid.volume()); // 100
 console.log(cuboid.surfaceArea()); // 130
 
 
+// adding CubeMaker in prototypes fashion:
+
+function CubeMaker(attributes) {
+  CuboidMaker.call(this, attributes);
+}
+
+CubeMaker.prototype = Object.create(CuboidMaker.prototype);
+
+CuboidMaker.prototype.checkIfCube = function() {
+  return this.length === this.width && this.width === this.height;
+}
+CuboidMaker.prototype.volume = function() {
+  if (this.checkIfCube()) {
+    return this.length ** 3;
+  } else {
+    return 'This cuboid is not a cube.'
+  }
+}
+CuboidMaker.prototype.surfaceArea = function() {
+  if (this.checkIfCube()) {
+    return 6 * this.length ** 2;
+  } else {
+    return 'This cuboid is not a cube.'
+  }
+}
+
+const cube = new CubeMaker({length: 2, width: 2, height: 2});
+const notACube = new CubeMaker({length: 4, width: 2, height: 2});
+
+console.log(cube.volume()); // 8
+console.log(cube.surfaceArea()); // 24
+
+console.log(notACube.volume());
+console.log(notACube.surfaceArea());
