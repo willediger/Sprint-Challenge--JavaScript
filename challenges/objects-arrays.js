@@ -135,16 +135,20 @@ console.log(lowerCase);
 
 The zoos are concenred about animals with a lower population count. Find out which animals have a population less than 5.
 
-*/
-const largerPopulation = [];
-console.log(largerPopulation);
+*/ // with map to JSON.stringify() to console log the human readable objects
+const smallerPopulation = zooAnimals.filter(e => e.population < 5).map(e => JSON.stringify(e));
+console.log(smallerPopulation);
+
+// with map to just the name & scientific name to console log the human readable name of animals
+const smallerPopulation2 = zooAnimals.filter(e => e.population < 5).map(e => `Name: ${e.animal_name}, Scientific: ${e.scientific_name}.`);
+console.log(smallerPopulation2);
 
 /* Request 4: .reduce() 
 
 The zoos need to know their total animal population across the United States.  Find the total population from all the zoos using the .reduce() method.
 
 */
-const populationTotal = 0;
+const populationTotal = zooAnimals.reduce((total, curr) => total + curr.population, 0);
 console.log(populationTotal);
 
 
