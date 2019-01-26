@@ -7,6 +7,25 @@
   * In the body of the function return the callback with the two parameters that you created
 */
 
+const higherOrder = (cb) => {
+  return cb();
+}
+
+//function to test higherOrder
+const higherOrderFn = () => {
+  console.log('mic check 1 2, 1 2')
+}
+
+//invocation of higherOrder to test it's working
+higherOrder(higherOrderFn);
+
+const consume = (val1, val2, cb) => cb(val1, val2);
+
+//function to test consume
+const consumeFn = (val1, val2) => val1 + val2;
+
+//invocation of consume to test it's working
+console.log(consume(5, 8, consumeFn));
 
 /* Step 2: Create several functions to callback with consume();
   * Create a function named add that returns the sum of two numbers
