@@ -6,30 +6,45 @@
   object name, diet, weight, length, period
 */
 
+class dinosaur {
+  constructor(attr) {
+    this.name = attr.name
+    this.diet = attr.diet
+    this.weight = attr.weight
+    this.length = attr.length
+    this.period = attr.period
+  }
+  roar() {
+    return `RAWERSRARARWERSARARARRRR!`;
+  }
+}
+
 // tyrannosaurus, carnivorous, 7000kg, 12m, Late Cretaceious
+const tyrannosaurus = new dinosaur({name: `tyrannosaurus`, diet: `carnivorous`, weight: `7000kg`, length: `12m`, period: `Late Cretaceious`})
 
 // stegosaurus, herbivorous, 2000kg, 9m, Late Jurassic
+const stegosaurus = new dinosaur({name: `stegosaurus`, diet: `herbivorous`, weight: `2000kg`, length: `9m`, period: `Late Jurassic`})
 
 // velociraptor, carnivorous, 15kg, 1.8m, Late Cretaceious
+const velociraptor = new dinosaur({name: `velociraptor`, diet: `carnivorous`, weight: `15kg`, length: `1.8m`, period: `Late Cretaceious`})
 
 // Using your dinosaur objects, log answers to these questions:
 
 // How much did tyrannosaurus weigh?
-console.log();
+console.log(tyrannosaurus.weight);
 
 // What was the diet of a velociraptor?
-console.log();
+console.log(velociraptor.diet);
 
 // How long was a stegosaurus?
-console.log();
+console.log(stegosaurus.length);
 
 // What time period did tyrannosaurus live in?
 console.log();
 
 
 // Create a new roar method for the tyrannosaurus.  When called, return "RAWERSRARARWERSARARARRRR!" Log the result.
-console.log();
-
+console.log(tyrannosaurus.roar());
 
 // ==== Arrays ====
 
@@ -49,8 +64,16 @@ const graduates = [{"id":1,"first_name":"Cynde","university":"Missouri Southern 
 /* Request 1: Create a new array called universities that contains all the univeristies in the graduates array.  
 
 Once you have the new array created, sort the universities alphabetically and log the result. */
-const universities = [];
-console.log(universities)
+let universities = [];
+for (let i = 0; i < graduates.length; i++) {
+  currUniversity = graduates[i].university;
+  //checks if university already present. if not, adds it to universities
+  if (!universities.includes(currUniversity)) { 
+    universities.push(currUniversity);
+  }
+}
+universities.sort();
+console.log(universities);
 
 /* Request 2: Create a new array called contactInfo that contains both first name and email of each student. 
 
