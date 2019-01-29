@@ -29,14 +29,33 @@ Demonstrate your understanding of this week's concepts by answering the followin
 Edit this document to include your answers after each question. Make sure to leave a blank line above and below your answer so it is clear and easy to read by your project manager
 
 1. Describe the biggest difference between `.forEach` & `.map`.
+.forEach doesn't return everything. It's just a convenient way to loop through an entire array and perform an action on/for every item in the array. .map returns a new array of elements that you define, for each element in the original array.
 
 2. What is the difference between a function and a method?
+A function is a javascript procedure that may return values (and those values can be functions, objects, etc). A method is a function defined on an object.
 
 3. What is closure?
+A closure is a way to define what variables & values are available to a function, which is described by how the function is declared. For instance:
+
+  function kanye() {
+    let name = 'Kanye';
+    function insideKanye() { 
+      console.log(name); 
+    }
+    insideKanye();  
+  }
+  kanye();
+
+  In this example, `name` is defined in the same block as insideKanye, so it has access to name. 
 
 4. Describe the four rules of the 'this' keyword.
+* Window/Global Object Binding: default binding of window/console object that applies when there aren't more specific binding being applied. when "use strict" is used, the global is undefined.
+* Implicit Binding: Left of the dot when invoked. So when an object is getting invoked that has used `this.` inside it, you know what the this is referring to when it's being invoked by looking at the object to the left of the dot.
+* New binding: When a constructur function is used, you invoke it using New. The this's in the constructor function refer to the instance of the object that is being created and returned by the constructor function being called with new.
+* Explicit binding: when using the .call() method to invoke a function, you can explicitly pass an object as the 'this' paremeter, so that when the function definition is referring to 'this', it's going to be referring to the object you pass in as the first argument in .call()
 
 5. Why do we need super() in an extended class?
+super(attr) replaces the functionality of ParentObject.call(this, attributes), which binds `this` to ParentObject. It is essentially running the parent's constructor function.
 
 ## Project Set up
 
